@@ -1,0 +1,5559 @@
+---
+swagger: "2.0"
+info:
+  title: Stack Exchange
+  description: Stack Exchange is a network of 130+ Q&amp;A communities including Stack
+    Overflow.
+  version: "2.0"
+host: api.stackexchange.com
+basePath: /2.2
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /access-tokens/{accessTokens}:
+    get:
+      summary: Get Acces Tokens
+      description: Reads the properties for a set of access tokens
+      operationId: reads-the-properties-for-a-set-of-access-tokens-accesstokens-can-contain-up-to-20-access-tokens-thes
+      parameters:
+      - in: path
+        name: accessTokens
+        description: String list (semicolon delimited)
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Authentication
+      - Access Tokens
+  /access-tokens/{accessTokens}/invalidate:
+    get:
+      summary: Invalidate Acces Tokens
+      description: Immediately expires the access tokens passed
+      operationId: immediately-expires-the-access-tokens-passed-this-method-is-meant-to-allow-an-application-to-discard
+      parameters:
+      - in: path
+        name: accessTokens
+        description: String list (semicolon delimited)
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Authentication
+      - Access Tokens
+  /answers:
+    get:
+      summary: Get Answers
+      description: Returns all the undeleted answers in the system
+      operationId: returns-all-the-undeleted-answers-in-the-system-the-sorts-accepted-by-this-method-operate-on-the-fol
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: Filter the discussion
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Answers
+  /answers/{ids}:
+    get:
+      summary: Get Answer
+      description: Gets the set of answers identified by ids
+      operationId: gets-the-set-of-answers-identified-by-ids-this-is-meant-for-batch-fetcing-of-questions-a-useful-tric
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Answers
+  /answers/{ids}/comments:
+    get:
+      summary: Get Answer Comments
+      description: Gets the comments on a set of answers
+      operationId: gets-the-comments-on-a-set-of-answers-if-you-know-that-you-have-an-answer-id-and-need-the-comments-u
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Answers
+      - comments
+  /apps/{accessTokens}/de-authenticate:
+    get:
+      summary: De-Authenticate Token
+      description: Passing valid access_tokens to this method causes the application
+        that created them to be de-authorized by the user associated with each access_token
+      operationId: passing-valid-access-tokens-to-this-method-causes-the-application-that-created-them-to-be-deauthoriz
+      parameters:
+      - in: path
+        name: accessTokens
+        description: String list (semicolon delimited)
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Authentication
+      - Access Tokens
+  /badges:
+    get:
+      summary: Get Badges
+      description: Returns all the badges in the system
+      operationId: returns-all-the-badges-in-the-system-badge-sorts-are-a-tad-complicated-for-the-purposes-of-sorting-a
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /badges/name:
+    get:
+      summary: Get Badge Name
+      description: Gets all explicitly named badges in the system
+      operationId: gets-all-explicitly-named-badges-in-the-system-a-named-badged-stands-in-opposition-to-a-tagbased-bad
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /badges/recipients:
+    get:
+      summary: Get Badge Recipients
+      description: Returns recently awarded badges in the system
+      operationId: returns-recently-awarded-badges-in-the-system-as-these-badges-have-been-awarded-they-will-have-the-b
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+      - Recipients
+  /badges/tags:
+    get:
+      summary: Get Badge Tags
+      description: Returns the badges that are awarded for participation in specific
+        tags
+      operationId: returns-the-badges-that-are-awarded-for-participation-in-specific-tags-for-the-rank-sort-bronze-is-g
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /badges/{ids}:
+    get:
+      summary: Get Badge
+      description: Gets the badges identified in id
+      operationId: gets-the-badges-identified-in-id-note-that-badge-ids-are-not-constant-across-sites-and-thus-should-b
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /badges/{ids}/recipients:
+    get:
+      summary: Get Badge Recipients
+      description: Returns recently awarded badges in the system, constrained to a
+        certain set of badges
+      operationId: returns-recently-awarded-badges-in-the-system-constrained-to-a-certain-set-of-badges-as-these-badges
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /comments:
+    get:
+      summary: Get Comments
+      description: Gets all the comments on the site
+      operationId: gets-all-the-comments-on-the-site-if-youre-filtering-for-interesting-comments-by-score-creation-date
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /comments/{ids}:
+    get:
+      summary: Get Comment
+      description: Gets the comments identified in id
+      operationId: gets-the-comments-identified-in-id-this-method-is-most-useful-if-you-have-a-cache-of-comment-ids-obt
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /comments/{id}/delete:
+    post:
+      summary: Delete Comment
+      description: Deletes a comment
+      operationId: deletes-a-comment-use-an-access-token-with-write-access-to-delete-a-comment-in-practice-this-method-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: preview
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /comments/{id}/edit:
+    post:
+      summary: Edit Comment
+      description: Edit an existing comment
+      operationId: edit-an-existing-comment-use-an-access-token-with-write-access-to-edit-an-existing-comment-this-meth
+      parameters:
+      - in: query
+        name: body
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: preview
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /errors:
+    get:
+      summary: Get Errors
+      description: Returns the various error codes that can be produced by the API
+      operationId: returns-the-various-error-codes-that-can-be-produced-by-the-api-this-method-is-provided-for-discover
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Errors
+  /errors/{id}:
+    get:
+      summary: Get Error
+      description: This method allows you to generate an error
+      operationId: this-method-allows-you-to-generate-an-error-this-method-is-only-intended-for-use-when-testing-an-app
+      parameters:
+      - in: path
+        name: id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Errors
+  /events:
+    get:
+      summary: Get Event
+      description: Returns a stream of events that have occurred on the site
+      operationId: returns-a-stream-of-events-that-have-occurred-on-the-site-the-api-considers-the-following-events--po
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: since
+        description: Unix date
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Events
+  /filters/create:
+    get:
+      summary: Create Filter
+      description: Creates a new filter given a list of includes, excludes, a base
+        filter, and whether or not this filter should be "unsafe"
+      operationId: creates-a-new-filter-given-a-list-of-includes-excludes-a-base-filter-and-whether-or-not-this-filter-
+      parameters:
+      - in: query
+        name: base
+      - in: query
+        name: exclude
+        description: String list (semicolon delimited)
+      - in: query
+        name: include
+        description: String list (semicolon delimited)
+      - in: query
+        name: unsafe
+      responses:
+        200:
+          description: OK
+      tags:
+      - Files
+  /filters/{filters}:
+    get:
+      summary: Get Filters
+      description: Returns the fields included by the given filters, and the "safeness"
+        of those filters
+      operationId: returns-the-fields-included-by-the-given-filters-and-the-safeness-of-those-filters-it-is-not-expecte
+      parameters:
+      - in: path
+        name: filters
+        description: String list (semicolon delimited)
+      responses:
+        200:
+          description: OK
+      tags:
+      - Files
+  /inbox:
+    get:
+      summary: Get Inbox
+      description: Returns a user's inbox
+      operationId: returns-a-users-inbox-this-method-requires-an-access-token-with-a-scope-containing-read-inbox-this-m
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Email
+      - Inbox
+  /inbox/unread:
+    get:
+      summary: Unread Inbox
+      description: Returns the unread items in a user's inbox
+      operationId: returns-the-unread-items-in-a-users-inbox-this-method-requires-an-access-token-with-a-scope-containi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: since
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Email
+      - Inbox
+  /info:
+    get:
+      summary: Get Information
+      description: Returns a collection of statistics about the site
+      operationId: returns-a-collection-of-statistics-about-the-site-data-to-facilitate-persite-customization-discover-
+      parameters:
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Information
+  /me:
+    get:
+      summary: Get Me
+      description: Returns the user associated with the passed access_token
+      operationId: returns-the-user-associated-with-the-passed-access-token-this-method-returns-a-user
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: min
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Self
+  /me/answers:
+    get:
+      summary: My Answers
+      description: Returns the answers owned by the user associated with the given
+        access_token
+      operationId: returns-the-answers-owned-by-the-user-associated-with-the-given-access-token-this-method-returns-a-l
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Answers
+  /me/associated:
+    get:
+      summary: My Assocated
+      description: Returns all of a user's associated accounts, given an access_token
+        for them
+      operationId: returns-all-of-a-users-associated-accounts-given-an-access-token-for-them-this-method-returns-a-list
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Associated
+  /me/badges:
+    get:
+      summary: My Badges
+      description: Returns the badges earned by the user associated with the given
+        access_token
+      operationId: returns-the-badges-earned-by-the-user-associated-with-the-given-access-token-this-method-returns-a-l
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Badges
+  /me/comments:
+    get:
+      summary: My Comments
+      description: Returns the comments owned by the user associated with the given
+        access_token
+      operationId: returns-the-comments-owned-by-the-user-associated-with-the-given-access-token-this-method-returns-a-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /me/comments/{toId}:
+    get:
+      summary: My Comments
+      description: Returns the comments owned by the user associated with the given
+        access_token that are in reply to the user identified by {toId}
+      operationId: returns-the-comments-owned-by-the-user-associated-with-the-given-access-token-that-are-in-reply-to-t
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      - in: path
+        name: toId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+  /me/favorites:
+    get:
+      summary: My Favorites
+      description: Returns the questions favorites by the user associated with the
+        given access_token
+      operationId: returns-the-questions-favorites-by-the-user-associated-with-the-given-access-token-this-method-retur
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = added => date
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = added => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Favorites
+  /me/inbox:
+    get:
+      summary: My Inbox
+      description: Returns the user identified by access_token's inbox
+      operationId: returns-the-user-identified-by-access-tokens-inbox-this-method-requires-an-access-token-with-a-scope
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Email
+      - Inbox
+  /me/inbox/unread:
+    get:
+      summary: My Inbox Unread
+      description: Returns the unread items in the user identified by access_token's
+        inbox
+      operationId: returns-the-unread-items-in-the-user-identified-by-access-tokens-inbox-this-method-requires-an-acces
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: since
+        description: Unix date
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Email
+      - Inbox
+  /me/mentioned:
+    get:
+      summary: My Mentions
+      description: Returns the comments mentioning the user associated with the given
+        access_token
+      operationId: returns-the-comments-mentioning-the-user-associated-with-the-given-access-token-this-method-returns-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Mentioned
+  /me/merges:
+    get:
+      summary: My Merges
+      description: Returns a record of merges that have occurred involving a user
+        identified by an access_token
+      operationId: returns-a-record-of-merges-that-have-occurred-involving-a-user-identified-by-an-access-token-this-me
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Merges
+  /me/notifications:
+    get:
+      summary: My Notiications
+      description: Returns a user's notifications, given an access_token
+      operationId: returns-a-users-notifications-given-an-access-token-this-method-requires-an-access-token-with-a-scop
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Notifications
+  /me/notifications/unread:
+    get:
+      summary: My Notiications Unread
+      description: Returns a user's unread notifications, given an access_token
+      operationId: returns-a-users-unread-notifications-given-an-access-token-this-method-requires-an-access-token-with
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Notifications
+  /me/privileges:
+    get:
+      summary: My Priveleges
+      description: Returns the privileges the user identified by access_token has
+      operationId: returns-the-privileges-the-user-identified-by-access-token-has-this-method-returns-a-list-of-privile
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Privileges
+  /me/questions:
+    get:
+      summary: My Questions
+      description: Returns the questions owned by the user associated with the given
+        access_token
+      operationId: returns-the-questions-owned-by-the-user-associated-with-the-given-access-token-this-method-returns-a
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /me/questions/featured:
+    get:
+      summary: My Questions Featured
+      description: Returns the questions that have active bounties offered by the
+        user associated with the given access_token
+      operationId: returns-the-questions-that-have-active-bounties-offered-by-the-user-associated-with-the-given-access
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /me/questions/no-answers:
+    get:
+      summary: My Questions No Answers
+      description: Returns the questions owned by the user associated with the given
+        access_token that have no answers
+      operationId: returns-the-questions-owned-by-the-user-associated-with-the-given-access-token-that-have-no-answers-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /me/questions/unaccepted:
+    get:
+      summary: My Questions Unaccepted
+      description: Returns the questions owned by the user associated with the given
+        access_token that have no accepted answer
+      operationId: returns-the-questions-owned-by-the-user-associated-with-the-given-access-token-that-have-no-accepted
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /me/questions/unanswered:
+    get:
+      summary: My Questions Unanswered
+      description: Returns the questions owned by the user associated with the given
+        access_token that are not considered answered
+      operationId: returns-the-questions-owned-by-the-user-associated-with-the-given-access-token-that-are-not-consider
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /me/reputation:
+    get:
+      summary: My Reputation
+      description: Returns the reputation changed for the user associated with the
+        given access_token
+      operationId: returns-the-reputation-changed-for-the-user-associated-with-the-given-access-token-this-method-retur
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Reputation
+  /me/reputation-history:
+    get:
+      summary: My Reputation History
+      description: Returns user's public reputation history
+      operationId: returns-users-public-reputation-history-this-method-returns-a-list-of-reputation-history
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Reputation
+  /me/reputation-history/full:
+    get:
+      summary: My Reputation History Full
+      description: Returns user's full reputation history, including private events
+      operationId: returns-users-full-reputation-history-including-private-events--this-method-requires-an-access-token
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Reputation
+  /me/suggested-edits:
+    get:
+      summary: Suggested Edits
+      description: Returns the suggested edits the user identified by access_token
+        has submitted
+      operationId: returns-the-suggested-edits-the-user-identified-by-access-token-has-submitted-this-method-returns-a-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Suggested Edits
+  /me/tags:
+    get:
+      summary: My Tags
+      description: Returns the tags the user identified by the access_token passed
+        is active in
+      operationId: returns-the-tags-the-user-identified-by-the-access-token-passed-is-active-in-this-method-returns-a-l
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+  /me/tags/{tags}/top-answers:
+    get:
+      summary: My Tags Top Answers
+      description: Returns the top 30 answers the user associated with the given access_token
+        has posted in response to questions with the given tags
+      operationId: returns-the-top-30-answers-the-user-associated-with-the-given-access-token-has-posted-in-response-to
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Anwers
+  /me/tags/{tags}/top-questions:
+    get:
+      summary: My Tags Top Questions
+      description: Returns the top 30 questions the user associated with the given
+        access_token has posted in response to questions with the given tags
+      operationId: returns-the-top-30-questions-the-user-associated-with-the-given-access-token-has-posted-in-response-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = hot => none
+          sort = week => none
+          sort = month => none
+          sort = relevance => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = hot => none
+          sort = week => none
+          sort = month => none
+          sort = relevance => none
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Questions
+  /me/timeline:
+    get:
+      summary: My Timeline
+      description: Returns a subset of the actions the user identified by the passed
+        access_token has taken on the site
+      operationId: returns-a-subset-of-the-actions-the-user-identified-by-the-passed-access-token-has-taken-on-the-site
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Timeline
+  /me/top-answer-tags:
+    get:
+      summary: My Top Answer Tags
+      description: Returns the user identified by access_token's top 30 tags by answer
+        score
+      operationId: returns-the-user-identified-by-access-tokens-top-30-tags-by-answer-score-this-method-returns-a-list-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Anwers
+  /me/top-question-tags:
+    get:
+      summary: My Top Question Tags
+      description: Returns the user identified by access_token's top 30 tags by question
+        score
+      operationId: returns-the-user-identified-by-access-tokens-top-30-tags-by-question-score-this-method-returns-a-lis
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Questions
+  /me/write-permissions:
+    get:
+      summary: My Write Permissions
+      description: Returns the write permissions a user has via the api, given an
+        access token
+      operationId: returns-the-write-permissions-a-user-has-via-the-api-given-an-access-token-the-stack-exchange-api-gi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Write Permissions
+  /notifications:
+    get:
+      summary: Get Notifications
+      description: Returns a user's notifications
+      operationId: returns-a-users-notifications-this-method-requires-an-access-token-with-a-scope-containing-read-inbo
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Notifications
+  /notifications/unread:
+    get:
+      summary: Get Notifications Unread
+      description: Returns a user's unread notifications
+      operationId: returns-a-users-unread-notifications-this-method-requires-an-access-token-with-a-scope-containing-re
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Notifications
+  /posts:
+    get:
+      summary: Get Posts
+      description: Fetches all posts (questions and answers) on the site
+      operationId: fetches-all-posts-questions-and-answers-on-the-site-in-many-ways-this-method-is-the-union-of-questio
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+  /posts/{ids}:
+    get:
+      summary: Get Post
+      description: Fetches a set of posts by ids
+      operationId: fetches-a-set-of-posts-by-ids-this-method-is-meant-for-grabbing-an-object-when-unsure-whether-an-id-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+  /posts/{ids}/comments:
+    get:
+      summary: Get Post Comments
+      description: Gets the comments on the posts identified in ids, regardless of
+        the type of the posts
+      operationId: gets-the-comments-on-the-posts-identified-in-ids-regardless-of-the-type-of-the-posts-this-method-is-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+      - Comments
+  /posts/{ids}/revisions:
+    get:
+      summary: Get Post Revisions
+      description: Returns edit revisions for the posts identified in ids
+      operationId: returns-edit-revisions-for-the-posts-identified-in-ids-ids-can-contain-up-to-100-semicolon-delimited
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+      - Revisions
+  /posts/{ids}/suggested-edits:
+    get:
+      summary: Get Posts Suggested Edits
+      description: Returns suggsted edits on the posts identified in ids
+      operationId: returns-suggsted-edits-on-the-posts-identified-in-ids---creation--creation-date--approval--approval-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+      - Suggested Edits
+  /posts/{id}/comments/add:
+    post:
+      summary: Add Comment Post
+      description: Create a new comment
+      operationId: create-a-new-comment-use-an-access-token-with-write-access-to-create-a-new-comment-on-a-post-this-me
+      parameters:
+      - in: query
+        name: body
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: preview
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Posts
+      - Comments
+  /privileges:
+    get:
+      summary: Get Privileges
+      description: Returns the earnable privileges on a site
+      operationId: returns-the-earnable-privileges-on-a-site-privileges-define-abilities-a-user-can-earn-via-reputation
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Privileges
+  /questions:
+    get:
+      summary: Get Questions
+      description: Gets all the questions on the site
+      operationId: gets-all-the-questions-on-the-site-this-method-allows-you-make-fairly-flexible-queries-across-the-en
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = hot => none
+          sort = week => none
+          sort = month => none
+          sort = relevance => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = hot => none
+          sort = week => none
+          sort = month => none
+          sort = relevance => none
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /questions/featured:
+    get:
+      summary: Get Questions Featured
+      description: Returns all the questions with active bounties in the system
+      operationId: returns-all-the-questions-with-active-bounties-in-the-system-the-sorts-accepted-by-this-method-opera
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /questions/no-answers:
+    get:
+      summary: Get Questions No Answers
+      description: Returns questions which have received no answers
+      operationId: returns-questions-which-have-received-no-answers-compare-with-questionsunanswered-which-mearly-retur
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /questions/unanswered:
+    get:
+      summary: Get Questions Unanswered
+      description: Returns questions the site considers to be unanswered
+      operationId: returns-questions-the-site-considers-to-be-unanswered-note-that-just-because-a-question-has-an-answe
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /questions/{ids}:
+    get:
+      summary: Get Questions
+      description: Returns the questions identified in {ids}
+      operationId: returns-the-questions-identified-in-ids-this-is-most-useful-for-fetching-fresh-data-when-maintaining
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+  /questions/{ids}/answers:
+    get:
+      summary: Get Question Answers
+      description: Gets the answers to a set of questions identified in id
+      operationId: gets-the-answers-to-a-set-of-questions-identified-in-id-this-method-is-most-useful-if-you-have-a-set
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+      - Answers
+  /questions/{ids}/comments:
+    get:
+      summary: Get Question Comments
+      description: Gets the comments on a question
+      operationId: gets-the-comments-on-a-question-if-you-know-that-you-have-an-question-id-and-need-the-comments-use-t
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+      - Linked
+  /questions/{ids}/linked:
+    get:
+      summary: Get Question Linked
+      description: Gets questions which link to those questions identified in {ids}
+      operationId: gets-questions-which-link-to-those-questions-identified-in-ids-this-method-only-considers-questions-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = rank => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = rank => none
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+      - Linked
+  /questions/{ids}/related:
+    get:
+      summary: Get Question Related
+      description: Returns questions that the site considers related to those identified
+        in {ids}
+      operationId: returns-questions-that-the-site-considers-related-to-those-identified-in-ids-the-algorithm-for-deter
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = rank => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = rank => none
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+      - Related
+  /questions/{ids}/timeline:
+    get:
+      summary: Get Question AnsweTimeliners
+      description: Returns a subset of the events that have happened to the questions
+        identified in id
+      operationId: returns-a-subset-of-the-events-that-have-happened-to-the-questions-identified-in-id-this-provides-da
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Questions
+      - Timeline
+  /revisions/{ids}:
+    get:
+      summary: Get Revisions
+      description: Returns edit revisions identified by ids in {ids}
+      operationId: returns-edit-revisions-identified-by-ids-in-ids-ids-can-contain-up-to-20-semicolon-delimited-ids-to-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Guid list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Revisions
+  /search:
+    get:
+      summary: Search
+      description: Searches a site for any questions which fit the given criteria
+      operationId: searches-a-site-for-any-questions-which-fit-the-given-criteria-this-method-is-intentionally-quite-li
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: intitle
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: nottagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Search
+  /search/advanced:
+    get:
+      summary: Advanced Search
+      description: Searches a site for any questions which fit the given criteria
+      operationId: searches-a-site-for-any-questions-which-fit-the-given-criteria-search-criteria-are-expressed-using-t
+      parameters:
+      - in: query
+        name: accepted
+      - in: query
+        name: answers
+      - in: query
+        name: body
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: closed
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: migrated
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: notice
+      - in: query
+        name: nottagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: q
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: title
+      - in: query
+        name: todate
+        description: Unix date
+      - in: query
+        name: url
+      - in: query
+        name: user
+      - in: query
+        name: views
+      - in: query
+        name: wiki
+      responses:
+        200:
+          description: OK
+      tags:
+      - Search
+  /similar:
+    get:
+      summary: Get Similar
+      description: Returns questions which are similar to a hypothetical one based
+        on a title and tag combination
+      operationId: returns-questions-which-are-similar-to-a-hypothetical-one-based-on-a-title-and-tag-combination-this-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = relevance => none
+      - in: query
+        name: nottagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: tagged
+        description: String list (semicolon delimited)
+      - in: query
+        name: title
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Similar
+  /sites:
+    get:
+      summary: Get Sites
+      description: Returns all sites in the network
+      operationId: returns-all-sites-in-the-network-this-method-allows-for-discovery-of-new-sites-and-changes-to-existi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Sites
+  /suggested-edits:
+    get:
+      summary: Get Suggested Edits
+      description: Returns all the suggested edits in the systems
+      operationId: returns-all-the-suggested-edits-in-the-systems-this-method-returns-a-list-of-suggestededits-the-sort
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Suggested Edits
+  /suggested-edits/{ids}:
+    get:
+      summary: Get Suggested Edit
+      description: Returns suggested edits identified in ids
+      operationId: returns-suggested-edits-identified-in-ids-ids-can-contain-up-to-100-semicolon-delimited-ids-to-find-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Suggested Edits
+  /tags:
+    get:
+      summary: Get Tags
+      description: Returns the tags found on a site
+      operationId: returns-the-tags-found-on-a-site-the-inname-parameter-lets-a-consumer-filter-down-to-tags-that-conta
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+  /tags/moderator-only:
+    get:
+      summary: Get Tags Moderator Only
+      description: Returns the tags found on a site that only moderators can use
+      operationId: returns-the-tags-found-on-a-site-that-only-moderators-can-use-the-inname-parameter-lets-a-consumer-f
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+  /tags/required:
+    get:
+      summary: Get Tags Requred
+      description: Returns the tags found on a site that fulfill required tag constraints
+        on questions
+      operationId: returns-the-tags-found-on-a-site-that-fulfill-required-tag-constraints-on-questions-the-inname-param
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Required
+  /tags/synonyms:
+    get:
+      summary: Get Tags Synonyms
+      description: Returns all tag synonyms found a site
+      operationId: returns-all-tag-synonyms-found-a-site-when-searching-for-synonyms-of-specific-tags-it-is-better-to-u
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = applied => number
+          sort = activity => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = applied => number
+          sort = activity => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Synonyms
+  /tags/{tags}/faq:
+    get:
+      summary: Get Tags FAQ
+      description: Returns the frequently asked questions for the given set of tags
+        in {tags}
+      operationId: returns-the-frequently-asked-questions-for-the-given-set-of-tags-in-tags-for-a-question-to-be-return
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - FAQ
+  /tags/{tags}/info:
+    get:
+      summary: Get Tags Info
+      description: Returns tag objects representing the tags in {tags} found on the
+        site
+      operationId: returns-tag-objects-representing-the-tags-in-tags-found-on-the-site-this-method-diverges-from-the-st
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Information
+  /tags/{tags}/related:
+    get:
+      summary: Get Tags Related
+      description: Returns the tags that are most related to those in {tags}
+      operationId: returns-the-tags-that-are-most-related-to-those-in-tags-including-multiple-tags-in-tags-is-equivalen
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Related
+  /tags/{tags}/synonyms:
+    get:
+      summary: Get Tags Synonyms
+      description: Gets all the synonyms that point to the tags identified in {tags}
+      operationId: gets-all-the-synonyms-that-point-to-the-tags-identified-in-tags-if-youre-looking-to-discover-all-the
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = applied => number
+          sort = activity => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = applied => number
+          sort = activity => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Synonyms
+  /tags/{tags}/wikis:
+    get:
+      summary: Get Tags Wikis
+      description: Returns the wikis that go with the given set of tags in {tags}
+      operationId: returns-the-wikis-that-go-with-the-given-set-of-tags-in-tags-be-aware-that-not-all-tags-have-wikis-t
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Wikis
+  /tags/{tag}/top-answerers/{period}:
+    get:
+      summary: Get Tags Top Answers
+      description: Returns the top 30 answerers active in a single tag, of either
+        all-time or the last 30 days
+      operationId: returns-the-top-30-answerers-active-in-a-single-tag-of-either-alltime-or-the-last-30-days-this-is-a-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: path
+        name: period
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: path
+        name: tag
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Top Answers
+  /tags/{tag}/top-askers/{period}:
+    get:
+      summary: Get Tags Top Askers
+      description: Returns the top 30 askers active in a single tag, of either all-time
+        or the last 30 days
+      operationId: returns-the-top-30-askers-active-in-a-single-tag-of-either-alltime-or-the-last-30-days-this-is-a-vie
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: path
+        name: period
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: path
+        name: tag
+      responses:
+        200:
+          description: OK
+      tags:
+      - Tags
+      - Top Askers
+  /users:
+    get:
+      summary: Get Users
+      description: Returns all users on a site
+      operationId: returns-all-users-on-a-site-this-method-returns-a-list-of-users-the-sorts-accepted-by-this-method-op
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: inname
+      - in: query
+        name: max
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: min
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+  /users/moderators:
+    get:
+      summary: Get User Moderators
+      description: Gets those users on a site who can exercise moderation powers
+      operationId: gets-those-users-on-a-site-who-can-exercise-moderation-powers-note-employees-of-stack-exchange-inc-w
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: min
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Moderators
+  /users/moderators/elected:
+    get:
+      summary: Get Users Moderators Elected
+      description: Returns those users on a site who both have moderator powers, and
+        were actually elected
+      operationId: returns-those-users-on-a-site-who-both-have-moderator-powers-and-were-actually-elected-this-method-e
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: query
+        name: max
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: min
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Moderators
+  /users/{ids}:
+    get:
+      summary: Get User
+      description: Gets the users identified in ids in {ids}
+      operationId: gets-the-users-identified-in-ids-in-ids-typically-this-method-will-be-called-to-fetch-user-profiles-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: min
+        description: |
+          sort = reputation => number
+          sort = creation => date
+          sort = name => string
+          sort = modified => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+  /users/{ids}/answers:
+    get:
+      summary: Get User Answers
+      description: Returns the answers the users in {ids} have posted
+      operationId: returns-the-answers-the-users-in-ids-have-posted-ids-can-contain-up-to-100-semicolon-delimited-ids-t
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Answers
+  /users/{ids}/associated:
+    get:
+      summary: Get User Associated
+      description: Returns all of a user's associated accounts, given their account_ids
+        in {ids}
+      operationId: returns-all-of-a-users-associated-accounts-given-their-account-ids-in-ids-ids-can-contain-up-to-100-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Associated
+  /users/{ids}/badges:
+    get:
+      summary: Get User Badges
+      description: Get the badges the users in {ids} have earned
+      operationId: get-the-badges-the-users-in-ids-have-earned-badge-sorts-are-a-tad-complicated-for-the-purposes-of-so
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+          sort = awarded => date
+      - in: query
+        name: min
+        description: |
+          sort = rank => string
+          sort = name => string
+          sort = type => string
+          sort = awarded => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Badges
+  /users/{ids}/comments:
+    get:
+      summary: Get User Comments
+      description: Get the comments posted by users in {ids}
+      operationId: get-the-comments-posted-by-users-in-ids-ids-can-contain-up-to-100-semicolon-delimited-ids-to-find-id
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Comments
+  /users/{ids}/comments/{toid}:
+    get:
+      summary: Get User Comments Told
+      description: Get the comments that the users in {ids} have posted in reply to
+        the single user identified in {toid}
+      operationId: get-the-comments-that-the-users-in-ids-have-posted-in-reply-to-the-single-user-identified-in-toid-th
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      - in: path
+        name: toid
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Comments
+  /users/{ids}/favorites:
+    get:
+      summary: Get User Favorites
+      description: Get the questions that users in {ids} have favorited
+      operationId: get-the-questions-that-users-in-ids-have-favorited-this-method-is-effectively-a-view-onto-a-users-fa
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = added => date
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+          sort = added => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Favorites
+  /users/{ids}/mentioned:
+    get:
+      summary: Get User Mentioned
+      description: Gets all the comments that the users in {ids} were mentioned in
+      operationId: gets-all-the-comments-that-the-users-in-ids-were-mentioned-in-note-to-count-as-a-mention-the-comment
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Mentioned
+  /users/{ids}/merges:
+    get:
+      summary: Get User Merges
+      description: Returns a record of merges that have occurred involving the passed
+        account ids
+      operationId: returns-a-record-of-merges-that-have-occurred-involving-the-passed-account-ids-this-method-allows-yo
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Merges
+  /users/{ids}/questions:
+    get:
+      summary: Get User Questions
+      description: Gets the questions asked by the users in {ids}
+      operationId: gets-the-questions-asked-by-the-users-in-ids-ids-can-contain-up-to-100-semicolon-delimited-ids-to-fi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Questions
+  /users/{ids}/questions/featured:
+    get:
+      summary: Get User Questions Featured
+      description: Gets the questions on which the users in {ids} have active bounties
+      operationId: gets-the-questions-on-which-the-users-in-ids-have-active-bounties-ids-can-contain-up-to-100-semicolo
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Featured
+  /users/{ids}/questions/no-answers:
+    get:
+      summary: Get User Questions No Answers
+      description: Gets the questions asked by the users in {ids} which have no answers
+      operationId: gets-the-questions-asked-by-the-users-in-ids-which-have-no-answers-questions-returns-by-this-method-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Answers
+  /users/{ids}/questions/unaccepted:
+    get:
+      summary: Get User Questions Unnacepted
+      description: Gets the questions asked by the users in {ids} which have at least
+        one answer, but no accepted answer
+      operationId: gets-the-questions-asked-by-the-users-in-ids-which-have-at-least-one-answer-but-no-accepted-answer-q
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Unaccepted
+  /users/{ids}/questions/unanswered:
+    get:
+      summary: Get User Questions Unanswered
+      description: Gets the questions asked by the users in {ids} which the site consideres
+        unanswered, while still having at least one answer posted
+      operationId: gets-the-questions-asked-by-the-users-in-ids-which-the-site-consideres-unanswered-while-still-having
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Unanswerd
+  /users/{ids}/reputation:
+    get:
+      summary: Get User Reputation
+      description: Gets a subset of the reputation changes for users in {ids}
+      operationId: gets-a-subset-of-the-reputation-changes-for-users-in-ids-reputation-changes-are-intentionally-scrubb
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Reputation
+  /users/{ids}/reputation-history:
+    get:
+      summary: Get User Reputation History
+      description: Returns users' public reputation history
+      operationId: returns-users-public-reputation-history-this-method-returns-a-list-of-reputation-history
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Reputation
+      - History
+  /users/{ids}/suggested-edits:
+    get:
+      summary: Get User Suggested Edits
+      description: Returns the suggested edits a users in {ids} have submitted
+      operationId: returns-the-suggested-edits-a-users-in-ids-have-submitted-ids-can-contain-up-to-100-semicolon-delimi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: min
+        description: |
+          sort = creation => date
+          sort = approval => date
+          sort = rejection => date
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Suggested Edits
+  /users/{ids}/tags:
+    get:
+      summary: Get User Tags
+      description: Returns the tags the users identified in {ids} have been active
+        in
+      operationId: returns-the-tags-the-users-identified-in-ids-have-been-active-in-this-route-corresponds-roughly-to-u
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: max
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: min
+        description: |
+          sort = popular => number
+          sort = activity => date
+          sort = name => string
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Tags
+  /users/{ids}/timeline:
+    get:
+      summary: Get User Timeline
+      description: Returns a subset of the actions the users in {ids} have taken on
+        the site
+      operationId: returns-a-subset-of-the-actions-the-users-in-ids-have-taken-on-the-site-this-method-returns-users-po
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: ids
+        description: Number list (semicolon delimited)
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Timiline
+  /users/{id}/inbox:
+    get:
+      summary: Get User Inbox
+      description: Returns a user's inbox
+      operationId: returns-a-users-inbox-this-method-requires-an-access-token-with-a-scope-containing-read-inbox-this-m
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Email
+      - Inbox
+  /users/{id}/inbox/unread:
+    get:
+      summary: Get User Inbox Unread
+      description: Returns the unread items in a user's inbox
+      operationId: returns-the-unread-items-in-a-users-inbox-this-method-requires-an-access-token-with-a-scope-containi
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: since
+        description: Unix date
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Email
+      - Inbox
+  /users/{id}/notifications:
+    get:
+      summary: Get User Notifications
+      description: Returns a user's notifications
+      operationId: returns-a-users-notifications-this-method-requires-an-access-token-with-a-scope-containing-read-inbo
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Notifications
+  /users/{id}/notifications/unread:
+    get:
+      summary: Get User Notifications Unread
+      description: Returns a user's unread notifications
+      operationId: returns-a-users-unread-notifications-this-method-requires-an-access-token-with-a-scope-containing-re
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Notifications
+  /users/{id}/privileges:
+    get:
+      summary: Get User Preveleges
+      description: Returns the privileges a user has
+      operationId: returns-the-privileges-a-user-has-applications-are-encouraged-to-calculate-privileges-themselves-wit
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Privileges
+  /users/{id}/reputation-history/full:
+    get:
+      summary: Get User Reputation History Full
+      description: Returns a user's full reputation history, including private events
+      operationId: returns-a-users-full-reputation-history-including-private-events-this-method-requires-an-access-toke
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Reputation
+  /users/{id}/tags/{tags}/top-answers:
+    get:
+      summary: Get User Tags Top Answers
+      description: Returns the top 30 answers a user has posted in response to questions
+        with the given tags
+      operationId: returns-the-top-30-answers-a-user-has-posted-in-response-to-questions-with-the-given-tags-id-can-con
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: id
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Tags
+      - Answers
+  /users/{id}/tags/{tags}/top-questions:
+    get:
+      summary: Get User Tags Top Questions
+      description: Returns the top 30 questions a user has asked with the given tags
+      operationId: returns-the-top-30-questions-a-user-has-asked-with-the-given-tags-id-can-contain-a-single-id-to-find
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: query
+        name: fromdate
+        description: Unix date
+      - in: path
+        name: id
+      - in: query
+        name: max
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: min
+        description: |
+          sort = activity => date
+          sort = creation => date
+          sort = votes => number
+      - in: query
+        name: order
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      - in: query
+        name: sort
+      - in: path
+        name: tags
+        description: String list (semicolon delimited)
+      - in: query
+        name: todate
+        description: Unix date
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Tags
+      - Questions
+  /users/{id}/top-answer-tags:
+    get:
+      summary: Get User Top Answers Tags
+      description: Returns a single user's top tags by answer score
+      operationId: returns-a-single-users-top-tags-by-answer-score-this-a-subset-of-the-data-returned-on-a-users-tags-t
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Top Answer Tags
+  /users/{id}/top-question-tags:
+    get:
+      summary: Get User Top Question Tags
+      description: Returns a single user's top tags by question score
+      operationId: returns-a-single-users-top-tags-by-question-score-this-a-subset-of-the-data-returned-on-a-users-tags
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - Top Question Tags
+  /users/{id}/write-permissions:
+    get:
+      summary: Get User Write Permissions
+      description: Returns the write permissions a user has via the api
+      operationId: returns-the-write-permissions-a-user-has-via-the-api-the-stack-exchange-api-gives-users-the-ability-
+      parameters:
+      - in: query
+        name: callback
+        description: All API responses are JSON, we do support JSONP with the callback
+          query parameter
+      - in: query
+        name: filter
+        description: |-
+          #Discussion
+
+          The Stack Exchange API allows applications to exclude almost every field returned
+      - in: path
+        name: id
+      - in: query
+        name: page
+      - in: query
+        name: pagesize
+      - in: query
+        name: site
+        description: Each of these methods operates on a single site at a time, identified
+          by the site parameter
+      responses:
+        200:
+          description: OK
+      tags:
+      - Write Permissions
+definitions:
+  created_comment:
+    properties:
+      body:
+        description: This is a default description.
+        type: get
+      body_markdown:
+        description: This is a default description.
+        type: get
+      can_flag:
+        description: This is a default description.
+        type: get
+      comment_id:
+        description: This is a default description.
+        type: get
+      creation_date:
+        description: This is a default description.
+        type: get
+      edited:
+        description: This is a default description.
+        type: get
+      link:
+        description: This is a default description.
+        type: get
+      owner:
+        description: This is a default description.
+        type: get
+      post_id:
+        description: This is a default description.
+        type: get
+      post_type:
+        description: This is a default description.
+        type: get
+  error:
+    properties:
+      error_id:
+        description: This is a default description.
+        type: get
+      error_message:
+        description: This is a default description.
+        type: get
+      error_name:
+        description: This is a default description.
+        type: get
+  info_object:
+    properties:
+      answers_per_minute:
+        description: This is a default description.
+        type: get
+      api_revision:
+        description: This is a default description.
+        type: get
+      badges_per_minute:
+        description: This is a default description.
+        type: get
+      new_active_users:
+        description: This is a default description.
+        type: get
+      questions_per_minute:
+        description: This is a default description.
+        type: get
+      site:
+        description: This is a default description.
+        type: get
+      total_accepted:
+        description: This is a default description.
+        type: get
+      total_answers:
+        description: This is a default description.
+        type: get
+      total_badges:
+        description: This is a default description.
+        type: get
+      total_comments:
+        description: This is a default description.
+        type: get
+  single_filter:
+    properties:
+      filter:
+        description: This is a default description.
+        type: get
+      filter_type:
+        description: This is a default description.
+        type: get
+      included_fields:
+        description: This is a default description.
+        type: get
+  user:
+    properties:
+      about_me:
+        description: This is a default description.
+        type: get
+      accept_rate:
+        description: This is a default description.
+        type: get
+      account_id:
+        description: This is a default description.
+        type: get
+      age:
+        description: This is a default description.
+        type: get
+      answer_count:
+        description: This is a default description.
+        type: get
+      badge_counts:
+        description: This is a default description.
+        type: get
+      creation_date:
+        description: This is a default description.
+        type: get
+      display_name:
+        description: This is a default description.
+        type: get
+      down_vote_count:
+        description: This is a default description.
+        type: get
+      is_employee:
+        description: This is a default description.
+        type: get
+---
