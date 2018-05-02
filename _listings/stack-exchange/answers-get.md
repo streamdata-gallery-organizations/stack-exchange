@@ -2,8 +2,7 @@
 swagger: "2.0"
 info:
   title: Stack Exchange
-  description: Stack Exchange is a network of 130+ Q&amp;A communities including Stack
-    Overflow.
+  description: Stack Exchange is a network of over 130 QA communities including Stack Overflow.
   version: "2.0"
 host: api.stackexchange.com
 basePath: /2.2
