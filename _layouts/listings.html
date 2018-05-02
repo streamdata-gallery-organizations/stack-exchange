@@ -11,7 +11,7 @@ layout: default
    {% include api-tag-filter.html %}
 
    {% if page.info.title %}
-
+    1!!<br />
      {% assign openapi = page | replace: ' ','-' | downcase %}
      {% assign slug = page.info.title | replace: ' ','-' | downcase %}
 
@@ -35,6 +35,8 @@ layout: default
      {% include api-details.html %}
 
    {% else %}
+
+   2!!<br />
 
      {% assign apis_json = page %}
 
