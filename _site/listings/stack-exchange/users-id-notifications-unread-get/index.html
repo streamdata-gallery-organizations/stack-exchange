@@ -846,39 +846,18 @@
 
 
    
-    1 host: api.stackexchange.com<br />
-     
-     
+
+    
+    
+    
 
      
      
 
      
-
-
-
-
-
-
      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
 
 
 
@@ -887,12 +866,37 @@
 
      
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
-api_base1: /users/{id}/notifications/unread<br />
 
-api_base2: /users/{id}/notifications/unread<br />
+     
+api_base 1: /2.2/users/{id}/notifications/unread<br />
 
-api_url: :///users/{id}/notifications/unread<br />
+api_base 2: /2.2/users/{id}/notifications/unread<br />
+
+api_url: http:///2.2/users/{id}/notifications/unread<br />
 
 
 
@@ -961,7 +965,7 @@ api_url: :///users/{id}/notifications/unread<br />
          </div>
          <div class="APIDescription__tableBody">
             <div class="APIDescription__tableBodyCopy">
-               <p><a href=":///users/{id}/notifications/unread" target="_blank" rel="noopener">:///users/{id}/notifications/unread</a></p>
+               <p><a href="http:///2.2/users/{id}/notifications/unread" target="_blank" rel="noopener">http:///2.2/users/{id}/notifications/unread</a></p>
             </div>
          </div>
       </div>
@@ -1027,7 +1031,7 @@ api_url: :///users/{id}/notifications/unread<br />
       </div>
       <div class="APIDescrpition__browserWindowMain">
          <p class="APIDescription__browserWindowMainCopy">
-            curl -v "https://streamdata.motwin.net/:///users/{id}/notifications/unread?X-Sd-Token={streamdata_token}&callback={field_value}&filter={field_value}&page={field_value}&pagesize={field_value}&site={field_value}"
+            curl -v "https://streamdata.motwin.net/http:///2.2/users/{id}/notifications/unread?X-Sd-Token={streamdata_token}&callback={field_value}&filter={field_value}&page={field_value}&pagesize={field_value}&site={field_value}"
          </p>
       </div>
    </div>

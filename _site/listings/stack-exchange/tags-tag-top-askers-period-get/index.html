@@ -846,39 +846,18 @@
 
 
    
-    1 host: api.stackexchange.com<br />
-     
-     
+
+    
+    
+    
 
      
      
 
      
-
-
-
-
-
-
      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
 
 
 
@@ -887,12 +866,37 @@
 
      
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
-api_base1: /tags/{tag}/top-askers/{period}<br />
 
-api_base2: /tags/{tag}/top-askers/{period}<br />
+     
+api_base 1: /2.2/tags/{tag}/top-askers/{period}<br />
 
-api_url: :///tags/{tag}/top-askers/{period}<br />
+api_base 2: /2.2/tags/{tag}/top-askers/{period}<br />
+
+api_url: http:///2.2/tags/{tag}/top-askers/{period}<br />
 
 
 
@@ -961,7 +965,7 @@ api_url: :///tags/{tag}/top-askers/{period}<br />
          </div>
          <div class="APIDescription__tableBody">
             <div class="APIDescription__tableBodyCopy">
-               <p><a href=":///tags/{tag}/top-askers/{period}" target="_blank" rel="noopener">:///tags/{tag}/top-askers/{period}</a></p>
+               <p><a href="http:///2.2/tags/{tag}/top-askers/{period}" target="_blank" rel="noopener">http:///2.2/tags/{tag}/top-askers/{period}</a></p>
             </div>
          </div>
       </div>
@@ -1027,7 +1031,7 @@ api_url: :///tags/{tag}/top-askers/{period}<br />
       </div>
       <div class="APIDescrpition__browserWindowMain">
          <p class="APIDescription__browserWindowMainCopy">
-            curl -v "https://streamdata.motwin.net/:///tags/{tag}/top-askers/{period}?X-Sd-Token={streamdata_token}&callback={field_value}&filter={field_value}&page={field_value}&pagesize={field_value}&site={field_value}"
+            curl -v "https://streamdata.motwin.net/http:///2.2/tags/{tag}/top-askers/{period}?X-Sd-Token={streamdata_token}&callback={field_value}&filter={field_value}&page={field_value}&pagesize={field_value}&site={field_value}"
          </p>
       </div>
    </div>

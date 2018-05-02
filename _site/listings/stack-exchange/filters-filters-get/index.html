@@ -846,39 +846,18 @@
 
 
    
-    1 host: api.stackexchange.com<br />
-     
-     
+
+    
+    
+    
 
      
      
 
      
-
-
-
-
-
-
      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
 
 
 
@@ -887,12 +866,37 @@
 
      
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
-api_base1: /filters/{filters}<br />
 
-api_base2: /filters/{filters}<br />
+     
+api_base 1: /2.2/filters/{filters}<br />
 
-api_url: :///filters/{filters}<br />
+api_base 2: /2.2/filters/{filters}<br />
+
+api_url: http:///2.2/filters/{filters}<br />
 
 
 
@@ -961,7 +965,7 @@ api_url: :///filters/{filters}<br />
          </div>
          <div class="APIDescription__tableBody">
             <div class="APIDescription__tableBodyCopy">
-               <p><a href=":///filters/{filters}" target="_blank" rel="noopener">:///filters/{filters}</a></p>
+               <p><a href="http:///2.2/filters/{filters}" target="_blank" rel="noopener">http:///2.2/filters/{filters}</a></p>
             </div>
          </div>
       </div>
@@ -1027,7 +1031,7 @@ api_url: :///filters/{filters}<br />
       </div>
       <div class="APIDescrpition__browserWindowMain">
          <p class="APIDescription__browserWindowMainCopy">
-            curl -v "https://streamdata.motwin.net/:///filters/{filters}?X-Sd-Token={streamdata_token}"
+            curl -v "https://streamdata.motwin.net/http:///2.2/filters/{filters}?X-Sd-Token={streamdata_token}"
          </p>
       </div>
    </div>
