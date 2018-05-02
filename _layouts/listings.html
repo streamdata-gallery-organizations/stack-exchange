@@ -3,7 +3,11 @@ layout: default
 ---
 
 <div class="shortMasthead  shortMasthead--extra-top-padding ">
-  {% include api-listing-feature.html %}
+  {% if page.info.title %}
+       <!--nothing-->
+  {% else %}
+       {% include api-listing-feature.html %}
+  {% endif %}
 </div>
 
 <section class="taggedLinkCards">
