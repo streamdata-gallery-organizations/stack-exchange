@@ -11,7 +11,7 @@ layout: default
    {% include api-tag-filter.html %}
 
    {% if page.info.title %}
-    1: {{ page }}<br />
+    1 host: {{ page.host }}<br />
      {% assign openapi = page | replace: ' ','-' | downcase %}
      {% assign slug = page.info.title | replace: ' ','-' | downcase %}
 
