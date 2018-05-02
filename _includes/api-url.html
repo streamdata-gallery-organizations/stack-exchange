@@ -1,3 +1,5 @@
+page: {{ page }}<br />
+
 {% assign api_base = append: page.host | append: page.basePath | append: path %}
 api_base1: {{ api_base }}<br />
 {% assign api_base = api_base | replace: '//','' %}
