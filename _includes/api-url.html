@@ -1,8 +1,8 @@
-{% assign api_base = append: api_host | append: api_base | append: path %}
-api_base 1: {{ api_base }}<br />
-{% assign api_base = api_base | replace: '//','' %}
-api_base 2: {{ api_base }}<br />
-{% assign api_url = api_scheme | append: '://' | append: api_base %}
+{% assign api_base_url = api_host | append: api_base | append: path %}
+api_base 1: {{ api_base_url }}<br />
+{% assign api_base_url = api_base_url | replace: '//','' %}
+api_base 2: {{ api_base_url }}<br />
+{% assign api_url = api_scheme | append: '://' | append: api_base_url %}
 api_url: {{ api_url }}<br />
 {% assign api_query = '' %}
 {% for parameter in api_path_parameters %}
