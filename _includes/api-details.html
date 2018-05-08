@@ -1,4 +1,4 @@
-<section class="APIDetailHeader">
+<section class="APIDetailHeader  APIDetailHeader--extra-top-padding ">
    <div class="APIDetailHeader__container">
       <div class="APIDetailHeader__left">
          <img src="{{ apis_json.image }}" alt="{{ page.info.title }}" class="APIDetailHeader__image">
@@ -15,6 +15,16 @@
 </section>
 
 {% if stream_rank.time_percentage != 0 and stream_rank.size_percentage != 0 and stream_rank.change_percentage != 0 %}
+  {% if stream_rank.change_percentage == 200 %}
+  <section class="APIDetailStats">
+     <h2 class="APIDetailStats__title">Savings With Streamdata.io</h2>
+     <div class="APIDetailStats__row">
+        <div class="APIDetailStats__statContainer">
+           <p class="APIDetailStats__stat">Variable Rank</p>
+        </div>
+     </div>
+  </section>
+  {% else %}
   <section class="APIDetailStats">
      <h2 class="APIDetailStats__title">Savings With Streamdata.io</h2>
      <div class="APIDetailStats__row">
