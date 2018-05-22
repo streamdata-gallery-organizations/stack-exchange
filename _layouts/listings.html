@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="shortMasthead  shortMasthead--extra-top-padding ">
-  {% if page.info.title %}
+  {% if page.info.title or page.name %}
        <!--nothing-->
   {% else %}
        {% include api-listing-feature.html %}
@@ -12,7 +12,7 @@ layout: default
 
 <section class="taggedLinkCards">
 
-   {% if page.info.title %}
+   {% if page.info.title or page.name %}
         <!--nothing-->
    {% else %}
         {% include api-tag-filter.html %}
@@ -47,9 +47,7 @@ layout: default
      {% include api-details.html %}
 
    {% else %}
-
-   2!!<br />
-
+   
      {% assign apis_json = page %}
 
      {% include apis-json.html %}
@@ -60,6 +58,7 @@ layout: default
    {% endif %}
 
 </section>
+
 <div class="submitApi__overflowContainer" data-submit-api="">
    <div class="submitApi submitApi--left-hand-image">
 
