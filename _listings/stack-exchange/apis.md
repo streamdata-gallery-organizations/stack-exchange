@@ -1,18 +1,16 @@
 ---
 name: Stack Exchange
 x-slug: stack-exchange
-description: Stack Exchange is a network of question and answer websites on diverse
-  topics in many different fields, each site covering a specific topic, where questions,
-  answers, and users are subject to a reputation award process. The sites are modeled
-  after Stack Overflow, a forum for computer programming questions that was the original
-  site in this network. The reputation system is designed to allow the sites to be
-  self-moderating.
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
+description: After someone asks a question, members of the community propose answers.
+  Others vote on those answers. Very quickly, the answers with the most votes rise
+  to the top. You don???t have to read through a lot of discussion to find the best
+  answer.    Like to...
+image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
 x-kinRank: "8"
-x-alexaRank: ""
+x-alexaRank: "126"
 tags: Stack Exchange
-created: "2018-05-22"
-modified: "2018-05-22"
+created: "2018-06-17"
+modified: "2018-06-17"
 url: https://raw.githubusercontent.com/streamdata-gallery-organizations/stack-exchange/master/_listings/stack-exchange/apis.md
 specificationVersion: "0.14"
 apis:
@@ -21,8 +19,8 @@ apis:
   description: "Reads the properties for a set of access tokens.\n \n{accessTokens}
     can contain up to 20 access tokens. These are obtained by authenticating a user
     using OAuth 2.0.\n \nThis method returns a list of access_tokens."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//access-tokens/{accessTokens}
   tags: Authentication,Access Tokens
   properties:
@@ -36,8 +34,8 @@ apis:
     to allow an application to discard any active access tokens it no longer needs.\n
     \n{accessTokens} can contain up to 20 access tokens. These are obtained by authenticating
     a user using OAuth 2.0.\n \nThis method returns a list of access_tokens."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//access-tokens/{accessTokens}/invalidate
   tags: Authentication,Access Tokens
   properties:
@@ -53,8 +51,8 @@ apis:
     is the default sort.\n \n It is possible to create moderately complex queries
     using sort, min, max, fromdate, and todate.\n \nThis method returns a list of
     answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//answers
   tags: Answers
   properties:
@@ -73,8 +71,8 @@ apis:
     - votes - score\n  activity is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//answers/{ids}
   tags: Answers
   properties:
@@ -93,8 +91,8 @@ apis:
     - score\n  creation is the default sort.\n \n It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//answers/{ids}/comments
   tags: Answers,comments
   properties:
@@ -113,8 +111,8 @@ apis:
     itself, the user will be prompted to approve the application again however.\n
     \n{accessTokens} can contain up to 20 access tokens. These are obtained by authenticating
     a user using OAuth 2.0.\n \nThis method returns a list of access_tokens."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//apps/{accessTokens}/de-authenticate
   tags: Authentication,Access Tokens
   properties:
@@ -132,8 +130,8 @@ apis:
     than gold. Along with sort=rank, set max=gold for just gold badges, max=silver&min=silver
     for just silver, and min=bronze for just bronze.\n \nrank is the default sort.\n
     \nThis method returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges
   tags: Badges
   properties:
@@ -149,8 +147,8 @@ apis:
     which is greater than gold. Along with sort=rank, set max=gold for just gold badges,
     max=silver&min=silver for just silver, and min=bronze for just bronze.\n \nrank
     is the default sort.\n \nThis method returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges/name
   tags: Badges
   properties:
@@ -163,8 +161,8 @@ apis:
   description: "Returns recently awarded badges in the system.\n \nAs these badges
     have been awarded, they will have the badge.user property set.\n \nThis method
     returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges/recipients
   tags: Badges,Recipients
   properties:
@@ -179,8 +177,8 @@ apis:
     gold. Along with sort=rank, set max=gold for just gold badges, max=silver&min=silver
     for just silver, and min=bronze for just bronze.\n \nrank is the default sort.\n
     \nThis method returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges/tags
   tags: Badges
   properties:
@@ -202,8 +200,8 @@ apis:
     is the default sort.\n \n{ids} can contain up to 100 semicolon delimited ids,
     to find ids programatically look for badge_id on badge objects.\n \nThis method
     returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges/{ids}
   tags: Badges
   properties:
@@ -218,8 +216,8 @@ apis:
     property set.\n \n{ids} can contain up to 100 semicolon delimited ids, to find
     ids programatically look for badge_id on badge objects.\n \nThis method returns
     a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//badges/{ids}/recipients
   tags: Badges
   properties:
@@ -237,8 +235,8 @@ apis:
     object:\n - creation - creation_date\n - votes - score\n  creation is the default
     sort.\n \n It is possible to create moderately complex queries using sort, min,
     max, fromdate, and todate.\n \nThis method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//comments
   tags: Comments
   properties:
@@ -256,8 +254,8 @@ apis:
     - creation - creation_date\n - votes - score\n  creation is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//comments/{ids}
   tags: Comments
   properties:
@@ -269,8 +267,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Deletes a comment.\n \nUse an access_token with write_access to delete
     a comment.\n \nIn practice, this method will never return an object."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//comments/{id}/delete
   tags: Comments
   properties:
@@ -282,8 +280,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Edit an existing comment.\n \nUse an access_token with write_access
     to edit an existing comment.\n \nThis method return the created comment."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//comments/{id}/edit
   tags: Comments
   properties:
@@ -298,8 +296,8 @@ apis:
     it is not expected many applications will consume it during normal operation.\n
     \nFor testing purposes, look into the /errors/{id} method which simulates errors
     given a code.\n \nThis method returns a list of errors."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//errors
   tags: Errors
   properties:
@@ -314,8 +312,8 @@ apis:
     in the API, its contract is not frozen, and new error codes may be added at any
     time.\n \nThis method results in an error, which will be expressed with a 400
     HTTP status code and setting the error* properties on the wrapper object."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//errors/{id}
   tags: Errors
   properties:
@@ -333,8 +331,8 @@ apis:
     returned by setting the since parameter.\n \nIt is advised that developers batch
     events by ids and make as few subsequent requests to other methods as possible.\n
     \nThis method returns a list of events."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//events
   tags: Events
   properties:
@@ -359,8 +357,8 @@ apis:
     will call this method at runtime, filters should be pre-calculated and \"baked
     in\" in the common cases. Furthermore, there are a number of built-in filters
     which cover common use cases.\n \nThis method returns a single filter."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//filters/create
   tags: Files
   properties:
@@ -376,8 +374,8 @@ apis:
     can contain up to 20 semicolon delimited filters. Filters are obtained via calls
     to /filters/create, or by using a built-in filter.\n \nThis method returns a list
     of filters."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//filters/{filters}
   tags: Files
   properties:
@@ -390,8 +388,8 @@ apis:
   description: "Returns a user's inbox.\n \nThis method requires an access_token,
     with a scope containing \"read_inbox\".\n \nThis method returns a list of inbox
     items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//inbox
   tags: Email,Inbox
   properties:
@@ -404,8 +402,8 @@ apis:
   description: "Returns the unread items in a user's inbox.\n \nThis method requires
     an access_token, with a scope containing \"read_inbox\".\n \nThis method returns
     a list of inbox items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//inbox/unread
   tags: Email,Inbox
   properties:
@@ -420,8 +418,8 @@ apis:
     returned by this method.\n \nThis data is cached very aggressively, by design.
     Query sparingly, ideally no more than once an hour.\n \nThis method returns an
     info object."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//info
   tags: Information
   properties:
@@ -433,8 +431,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the user associated with the passed access_token.\n \nThis
     method returns a user."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me
   tags: Self
   properties:
@@ -446,8 +444,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the answers owned by the user associated with the given access_token.\n
     \nThis method returns a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/answers
   tags: Answers
   properties:
@@ -459,8 +457,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns all of a user's associated accounts, given an access_token
     for them.\n \nThis method returns a list of network users."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/associated
   tags: Associated
   properties:
@@ -472,8 +470,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the badges earned by the user associated with the given access_token.\n
     \nThis method returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/badges
   tags: Badges
   properties:
@@ -485,8 +483,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the comments owned by the user associated with the given access_token.\n
     \nThis method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/comments
   tags: Comments
   properties:
@@ -499,8 +497,8 @@ apis:
   description: "Returns the comments owned by the user associated with the given access_token
     that are in reply to the user identified by {toId}.\n \nThis method returns a
     list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/comments/{toId}
   tags: Comments
   properties:
@@ -512,8 +510,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the questions favorites by the user associated with the given
     access_token.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/favorites
   tags: Favorites
   properties:
@@ -526,8 +524,8 @@ apis:
   description: "Returns the user identified by access_token's inbox.\n \nThis method
     requires an access_token, with a scope containing \"read_inbox\".\n \nThis method
     returns a list of inbox items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/inbox
   tags: Email,Inbox
   properties:
@@ -540,8 +538,8 @@ apis:
   description: "Returns the unread items in the user identified by access_token's
     inbox.\n \nThis method requires an access_token, with a scope containing \"read_inbox\".\n
     \nThis method returns a list of inbox items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/inbox/unread
   tags: Email,Inbox
   properties:
@@ -553,8 +551,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the comments mentioning the user associated with the given
     access_token.\n \nThis method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/mentioned
   tags: Mentioned
   properties:
@@ -574,8 +572,8 @@ apis:
     level, users on a site may be merged due to an account level merge but there is
     no guarantee that a merge has an effect on any particular site.\n \nThis method
     returns a list of account_merge."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/merges
   tags: Merges
   properties:
@@ -588,8 +586,8 @@ apis:
   description: "Returns a user's notifications, given an access_token.\n \nThis method
     requires an access_token, with a scope containing \"read_inbox\".\n \nThis method
     returns a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/notifications
   tags: Notifications
   properties:
@@ -602,8 +600,8 @@ apis:
   description: "Returns a user's unread notifications, given an access_token.\n \nThis
     method requires an access_token, with a scope containing \"read_inbox\".\n \nThis
     method returns a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/notifications/unread
   tags: Notifications
   properties:
@@ -615,8 +613,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the privileges the user identified by access_token has.\n
     \nThis method returns a list of privileges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/privileges
   tags: Privileges
   properties:
@@ -628,8 +626,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the questions owned by the user associated with the given
     access_token.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/questions
   tags: Questions
   properties:
@@ -641,8 +639,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the questions that have active bounties offered by the user
     associated with the given access_token.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/questions/featured
   tags: Questions
   properties:
@@ -654,8 +652,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the questions owned by the user associated with the given
     access_token that have no answers.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/questions/no-answers
   tags: Questions
   properties:
@@ -667,8 +665,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the questions owned by the user associated with the given
     access_token that have no accepted answer.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/questions/unaccepted
   tags: Questions
   properties:
@@ -681,8 +679,8 @@ apis:
   description: "Returns the questions owned by the user associated with the given
     access_token that are not considered answered.\n \nThis method returns a list
     of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/questions/unanswered
   tags: Questions
   properties:
@@ -694,8 +692,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the reputation changed for the user associated with the given
     access_token.\n \nThis method returns a list of reputation changes."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/reputation
   tags: Reputation
   properties:
@@ -707,8 +705,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns user's public reputation history.\n \nThis method returns
     a list of reputation_history."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/reputation-history
   tags: Reputation
   properties:
@@ -721,8 +719,8 @@ apis:
   description: "Returns user's full reputation history, including private events.\n
     \n This method requires an access_token, with a scope containing \"private_info\".\n
     \nThis method returns a list of reputation_history."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/reputation-history/full
   tags: Reputation
   properties:
@@ -734,8 +732,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the suggested edits the user identified by access_token has
     submitted.\n \nThis method returns a list of suggested-edits."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/suggested-edits
   tags: Suggested Edits
   properties:
@@ -747,8 +745,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the tags the user identified by the access_token passed is
     active in.\n \nThis method returns a list of tags."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/tags
   tags: Tags
   properties:
@@ -761,8 +759,8 @@ apis:
   description: "Returns the top 30 answers the user associated with the given access_token
     has posted in response to questions with the given tags.\n \nThis method returns
     a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/tags/{tags}/top-answers
   tags: Tags,Anwers
   properties:
@@ -775,8 +773,8 @@ apis:
   description: "Returns the top 30 questions the user associated with the given access_token
     has posted in response to questions with the given tags.\n \nThis method returns
     a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/tags/{tags}/top-questions
   tags: Tags,Questions
   properties:
@@ -789,8 +787,8 @@ apis:
   description: "Returns a subset of the actions the user identified by the passed
     access_token has taken on the site.\n \nThis method returns a list of user timeline
     objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/timeline
   tags: Tags,Timeline
   properties:
@@ -802,8 +800,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the user identified by access_token's top 30 tags by answer
     score.\n \nThis method returns a list of top tag objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/top-answer-tags
   tags: Tags,Anwers
   properties:
@@ -815,8 +813,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns the user identified by access_token's top 30 tags by question
     score.\n \nThis method returns a list of top tag objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/top-question-tags
   tags: Tags,Questions
   properties:
@@ -833,8 +831,8 @@ apis:
     method does not consider the user's current quota (ie. if they've already exhausted
     it for today) nor any additional restrictions on write access, such as editing
     deleted comments.\n \nThis method returns a list of write_permissions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//me/write-permissions
   tags: Write Permissions
   properties:
@@ -846,8 +844,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns a user's notifications.\n \nThis method requires an access_token,
     with a scope containing \"read_inbox\".\n \nThis method returns a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//notifications
   tags: Notifications
   properties:
@@ -860,8 +858,8 @@ apis:
   description: "Returns a user's unread notifications.\n \nThis method requires an
     access_token, with a scope containing \"read_inbox\".\n \nThis method returns
     a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//notifications/unread
   tags: Notifications
   properties:
@@ -882,8 +880,8 @@ apis:
     is the default sort.\n \n It is possible to create moderately complex queries
     using sort, min, max, fromdate, and todate.\n \nThis method returns a list of
     posts."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts
   tags: Posts
   properties:
@@ -902,8 +900,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of posts."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts/{ids}
   tags: Posts
   properties:
@@ -923,8 +921,8 @@ apis:
     - votes - score\n  creation is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts/{ids}/comments
   tags: Posts,Comments
   properties:
@@ -938,8 +936,8 @@ apis:
     can contain up to 100 semicolon delimited ids, to find ids programatically look
     for post_id, answer_id, or question_id on post, answer, and question objects respectively.\n
     \nThis method returns a list of revisions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts/{ids}/revisions
   tags: Posts,Revisions
   properties:
@@ -955,8 +953,8 @@ apis:
     ids, to find ids programatically look for post_id, answer_id, or question_id on
     post, answer, and question objects respectively.\n \nThis method returns a list
     of suggested-edits."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts/{ids}/suggested-edits
   tags: Posts,Suggested Edits
   properties:
@@ -968,8 +966,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Create a new comment.\n \nUse an access_token with write_access to
     create a new comment on a post.\n \nThis method returns the created comment."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//posts/{id}/comments/add
   tags: Posts,Comments
   properties:
@@ -984,8 +982,8 @@ apis:
     stable, over time they do change. New ones are introduced with new features, and
     the reputation requirements change as a site matures.\n \nThis method returns
     a list of privileges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//privileges
   tags: Privileges
   properties:
@@ -1010,8 +1008,8 @@ apis:
     ordering the month tab Does not accept min or max\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions
   tags: Questions
   properties:
@@ -1027,8 +1025,8 @@ apis:
     \ activity is the default sort.\n \n It is possible to create moderately complex
     queries using sort, min, max, fromdate, and todate.\n \nThis method returns a
     list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/featured
   tags: Questions
   properties:
@@ -1049,8 +1047,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/no-answers
   tags: Questions
   properties:
@@ -1073,8 +1071,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/unanswered
   tags: Questions
   properties:
@@ -1093,8 +1091,8 @@ apis:
     is the default sort.\n \n It is possible to create moderately complex queries
     using sort, min, max, fromdate, and todate.\n \nThis method returns a list of
     questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}
   tags: Questions
   properties:
@@ -1114,8 +1112,8 @@ apis:
     - score\n  activity is the default sort.\n \n It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}/answers
   tags: Questions,Answers
   properties:
@@ -1134,8 +1132,8 @@ apis:
     - votes - score\n  creation is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}/comments
   tags: Questions,Linked
   properties:
@@ -1157,8 +1155,8 @@ apis:
     accept min or max\n  activity is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}/linked
   tags: Questions,Linked
   properties:
@@ -1182,8 +1180,8 @@ apis:
     min or max\n  activity is the default sort.\n \n It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}/related
   tags: Questions,Related
   properties:
@@ -1199,8 +1197,8 @@ apis:
     \n{ids} can contain up to 100 semicolon delimited ids, to find ids programatically
     look for question_id on question objects.\n \nThis method returns a list of question
     timeline events."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//questions/{ids}/timeline
   tags: Questions,Timeline
   properties:
@@ -1214,8 +1212,8 @@ apis:
     up to 20 semicolon delimited ids, to find ids programatically look for revision_guid
     on revision objects. Note that unlike most other id types in the API, revision_guid
     is a string.\n \nThis method returns a list of revisions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//revisions/{ids}
   tags: Revisions
   properties:
@@ -1238,8 +1236,8 @@ apis:
     tab on the site itself Does not accept min or max\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//search
   tags: Search
   properties:
@@ -1275,8 +1273,8 @@ apis:
     or max\n  activity is the default sort.\n \n It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//search/advanced
   tags: Search
   properties:
@@ -1301,8 +1299,8 @@ apis:
     is the default sort.\n \n It is possible to create moderately complex queries
     using sort, min, max, fromdate, and todate.\n \nThis method returns a list of
     questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//similar
   tags: Similar
   properties:
@@ -1321,8 +1319,8 @@ apis:
     is unbounded, in acknowledgement that for many applications repeatedly fetching
     from /sites would complicate start-up tasks needlessly.\n \nThis method returns
     a list of sites."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//sites
   tags: Sites
   properties:
@@ -1339,8 +1337,8 @@ apis:
     Does not return unrejected suggested_edits\n  creation is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//suggested-edits
   tags: Suggested Edits
   properties:
@@ -1358,8 +1356,8 @@ apis:
     Does not return unrejected suggested_edits\n  creation is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of suggested-edits."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//suggested-edits/{ids}
   tags: Suggested Edits
   properties:
@@ -1377,8 +1375,8 @@ apis:
     last question asked with the tag\n - name - name\n  popular is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags
   tags: Tags
   properties:
@@ -1396,8 +1394,8 @@ apis:
     creation_date of the last question asked with the tag\n - name - name\n  popular
     is the default sort.\n \n It is possible to create moderately complex queries
     using sort, min, max, fromdate, and todate."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/moderator-only
   tags: Tags
   properties:
@@ -1415,8 +1413,8 @@ apis:
     - popular - count\n - activity - the creation_date of the last question asked
     with the tag\n - name - name\n  popular is the default sort.\n \n It is possible
     to create moderately complex queries using sort, min, max, fromdate, and todate."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/required
   tags: Tags,Required
   properties:
@@ -1433,8 +1431,8 @@ apis:
     - last_applied_date\n  creation is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of tag_synonyms."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/synonyms
   tags: Tags,Synonyms
   properties:
@@ -1450,8 +1448,8 @@ apis:
     a question is considered a FAQ is subject to change at any time.\n \n{tags} can
     contain up to 5 individual tags per request.\n \nThis method returns a list of
     questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tags}/faq
   tags: Tags,FAQ
   properties:
@@ -1469,8 +1467,8 @@ apis:
     of the last question asked with the tag\n - name - name\n  popular is the default
     sort.\n \n It is possible to create moderately complex queries using sort, min,
     max, fromdate, and todate."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tags}/info
   tags: Tags,Information
   properties:
@@ -1486,8 +1484,8 @@ apis:
     is the number of question with that tag that also share all those in {tags}.\n
     \n{tags} can contain up to 4 individual tags per request.\n \nThis method returns
     a list of tags."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tags}/related
   tags: Tags,Related
   properties:
@@ -1505,8 +1503,8 @@ apis:
     - applied - applied_count\n - activity - last_applied_date\n  creation is the
     default sort.\n \n It is possible to create moderately complex queries using sort,
     min, max, fromdate, and todate.\n \nThis method returns a list of tag synonyms."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tags}/synonyms
   tags: Tags,Synonyms
   properties:
@@ -1519,8 +1517,8 @@ apis:
   description: "Returns the wikis that go with the given set of tags in {tags}.\n
     \nBe aware that not all tags have wikis.\n \n{tags} can contain up to 20 individual
     tags per request.\n \nThis method returns a list of tag wikis."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tags}/wikis
   tags: Tags,Wikis
   properties:
@@ -1533,8 +1531,8 @@ apis:
   description: "Returns the top 30 answerers active in a single tag, of either all-time
     or the last 30 days.\n \nThis is a view onto the data presented on the tag info
     page on the sites.\n \nThis method returns a list of tag score objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tag}/top-answerers/{period}
   tags: Tags,Top Answers
   properties:
@@ -1547,8 +1545,8 @@ apis:
   description: "Returns the top 30 askers active in a single tag, of either all-time
     or the last 30 days.\n \nThis is a view onto the data presented on the tag info
     page on the sites.\n \nThis method returns a list of tag score objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//tags/{tag}/top-askers/{period}
   tags: Tags,Top Askers
   properties:
@@ -1567,8 +1565,8 @@ apis:
     just those users with a certain substring in their display name. For example,
     inname=kevin will return all users with both users named simply \"Kevin\" or those
     with Kevin as one of (or part of) their names; such as \"Kevin Montrose\"."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users
   tags: Users
   properties:
@@ -1587,8 +1585,8 @@ apis:
     - modified - last_modified_date\n  reputation is the default sort.\n \n It is
     possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of users."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/moderators
   tags: Users,Moderators
   properties:
@@ -1606,8 +1604,8 @@ apis:
     - name - display_name\n - modified - last_modified_date\n  reputation is the default
     sort.\n \n It is possible to create moderately complex queries using sort, min,
     max, fromdate, and todate.\n \nThis method returns a list of users."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/moderators/elected
   tags: Users,Moderators
   properties:
@@ -1626,8 +1624,8 @@ apis:
     - modified - last_modified_date\n  reputation is the default sort.\n \n It is
     possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of users."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}
   tags: Users
   properties:
@@ -1644,8 +1642,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/answers
   tags: Users,Answers
   properties:
@@ -1659,8 +1657,8 @@ apis:
     in {ids}.\n \n{ids} can contain up to 100 semicolon delimited ids, to find ids
     programatically look for account_id on user objects.\n \nThis method returns a
     list of network_users."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/associated
   tags: Users,Associated
   properties:
@@ -1680,8 +1678,8 @@ apis:
     is the default sort.\n \n{ids} can contain up to 100 semicolon delimited ids,
     to find ids programatically look for user_id on user or shallow_user objects.\n
     \nThis method returns a list of badges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/badges
   tags: Users,Badges
   properties:
@@ -1698,8 +1696,8 @@ apis:
     - score\n  creation is the default sort.\n \n It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/comments
   tags: Users,Comments
   properties:
@@ -1719,8 +1717,8 @@ apis:
     \ creation is the default sort.\n \n It is possible to create moderately complex
     queries using sort, min, max, fromdate, and todate.\n \nThis method returns a
     list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/comments/{toid}
   tags: Users,Comments
   properties:
@@ -1739,8 +1737,8 @@ apis:
     \ activity is the default sort.\n \n It is possible to create moderately complex
     queries using sort, min, max, fromdate, and todate.\n \nThis method returns a
     list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/favorites
   tags: Users,Favorites
   properties:
@@ -1759,8 +1757,8 @@ apis:
     - creation - creation_date\n - votes - score\n  It is possible to create moderately
     complex queries using sort, min, max, fromdate, and todate.\n \nThis method returns
     a list of comments."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/mentioned
   tags: Users,Mentioned
   properties:
@@ -1780,8 +1778,8 @@ apis:
     users on a site may be merged due to an account level merge but there is no guarantee
     that a merge has an effect on any particular site.\n \nThis method returns a list
     of account_merge."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/merges
   tags: Users,Merges
   properties:
@@ -1798,8 +1796,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/questions
   tags: Users,Questions
   properties:
@@ -1816,8 +1814,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/questions/featured
   tags: Users,Featured
   properties:
@@ -1837,8 +1835,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/questions/no-answers
   tags: Users,Answers
   properties:
@@ -1857,8 +1855,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/questions/unaccepted
   tags: Users,Unaccepted
   properties:
@@ -1882,8 +1880,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/questions/unanswered
   tags: Users,Unanswerd
   properties:
@@ -1900,8 +1898,8 @@ apis:
     can contain up to 100 semicolon delimited ids, to find ids programatically look
     for user_id on user or shallow_user objects.\n \nThis method returns a list of
     reputation objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/reputation
   tags: Users,Reputation
   properties:
@@ -1913,8 +1911,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns users' public reputation history.\n \nThis method returns
     a list of reputation_history."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/reputation-history
   tags: Users,Reputation,History
   properties:
@@ -1932,8 +1930,8 @@ apis:
     - rejection_date Does not return unrejected suggested_edits\n  creation is the
     default sort.\n \n It is possible to create moderately complex queries using sort,
     min, max, fromdate, and todate.\n \nThis method returns a list of suggested-edits."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/suggested-edits
   tags: Users,Suggested Edits
   properties:
@@ -1953,8 +1951,8 @@ apis:
     with the tag\n - name - name\n  popular is the default sort.\n \n It is possible
     to create moderately complex queries using sort, min, max, fromdate, and todate.\n
     \nThis method returns a list of tags."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/tags
   tags: Users,Tags
   properties:
@@ -1970,8 +1968,8 @@ apis:
     using the fromdate and todate parameters.\n \n{ids} can contain up to 100 semicolon
     delimited ids, to find ids programatically look for user_id on user or shallow_user
     objects.\n \nThis method returns a list of user timeline objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{ids}/timeline
   tags: Users,Timiline
   properties:
@@ -1988,8 +1986,8 @@ apis:
     a whole.\n \n{id} can contain a single id, to find it programatically look for
     user_id on user or shallow_user objects.\n \nThis method returns a list of inbox
     items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/inbox
   tags: Users,Email,Inbox
   properties:
@@ -2006,8 +2004,8 @@ apis:
     network as a whole.\n \n{id} can contain a single id, to find it programatically
     look for user_id on user or shallow_user objects.\n \nThis method returns a list
     of inbox items."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/inbox/unread
   tags: Users,Email,Inbox
   properties:
@@ -2019,8 +2017,8 @@ apis:
   x-api-slug: stack-exchange
   description: "Returns a user's notifications.\n \nThis method requires an access_token,
     with a scope containing \"read_inbox\".\n \nThis method returns a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/notifications
   tags: Users,Notifications
   properties:
@@ -2033,8 +2031,8 @@ apis:
   description: "Returns a user's unread notifications.\n \nThis method requires an
     access_token, with a scope containing \"read_inbox\".\n \nThis method returns
     a list of notifications."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/notifications/unread
   tags: Users,Notifications
   properties:
@@ -2050,8 +2048,8 @@ apis:
     be sufficient.\n \n{id} can contain only a single, to find it programatically
     look for user_id on user or shallow_user objects.\n \nThis method returns a list
     of privileges."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/privileges
   tags: Users,Privileges
   properties:
@@ -2064,8 +2062,8 @@ apis:
   description: "Returns a user's full reputation history, including private events.\n
     \nThis method requires an access_token, with a scope containing \"private_info\".\n
     \nThis method returns a list of reputation_history."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/reputation-history/full
   tags: Users,Reputation
   properties:
@@ -2083,8 +2081,8 @@ apis:
     - creation - creation_date\n - votes - score\n  activity is the default sort.\n
     \n It is possible to create moderately complex queries using sort, min, max, fromdate,
     and todate.\n \nThis method returns a list of answers."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/tags/{tags}/top-answers
   tags: Users,Tags,Answers
   properties:
@@ -2102,8 +2100,8 @@ apis:
     - votes - score\n  activity is the default sort.\n \n It is possible to create
     moderately complex queries using sort, min, max, fromdate, and todate.\n \nThis
     method returns a list of questions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/tags/{tags}/top-questions
   tags: Users,Tags,Questions
   properties:
@@ -2117,8 +2115,8 @@ apis:
     of the data returned on a user's tags tab.\n \n{id} can contain a single id, to
     find it programatically look for user_id on user or shallow_user objects.\n \nThis
     method returns a list of top_tag objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/top-answer-tags
   tags: Users,Top Answer Tags
   properties:
@@ -2132,8 +2130,8 @@ apis:
     of the data returned on a user's tags tab.\n \n{id} can contain a single id, to
     find it programatically look for user_id on user or shallow_user objects.\n \nThis
     method returns a list of top_tag objects."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/top-question-tags
   tags: Users,Top Question Tags
   properties:
@@ -2150,8 +2148,8 @@ apis:
     the user's current quota (ie. if they've already exhausted it for today) nor any
     additional restrictions on write access, such as editing deleted comments.\n \nThis
     method returns a list of write_permissions."
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2//users/{id}/write-permissions
   tags: Write Permissions
   properties:
@@ -2161,14 +2159,12 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/stack-exchange/master/_listings/stack-exchange/usersidwritepermissions-get-openapi.md
 - name: Stack Exchange
   x-api-slug: stack-exchange
-  description: Stack Exchange is a network of question and answer websites on diverse
-    topics in many different fields, each site covering a specific topic, where questions,
-    answers, and users are subject to a reputation award process. The sites are modeled
-    after Stack Overflow, a forum for computer programming questions that was the
-    original site in this network. The reputation system is designed to allow the
-    sites to be self-moderating.
-  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/253_logo.png
-  humanURL: https://stackexchange.com/
+  description: After someone asks a question, members of the community propose answers.
+    Others vote on those answers. Very quickly, the answers with the most votes rise
+    to the top. You don???t have to read through a lot of discussion to find the best
+    answer.    Like to...
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
+  humanURL: http://stackexchange.com
   baseURL: https://api.stackexchange.com//2.2
   tags: Stack Exchange
   properties:
@@ -2185,8 +2181,14 @@ x-common:
   url: http://blog.stackoverflow.com/feed/
 - type: x-crunchbase
   url: http://www.crunchbase.com/company/stack-exchange
+- type: x-crunchbase
+  url: https://crunchbase.com/organization/stack-exchange
 - type: x-developer
   url: http://api.stackexchange.com/
+- type: x-email
+  url: legal@stackexchange.com
+- type: x-email
+  url: team@stackexchange.com
 - type: x-email
   url: team+api@stackexchange.com
 - type: x-error-codes
@@ -2207,6 +2209,8 @@ x-common:
   url: http://stackexchange.com/legal/api-terms-of-use
 - type: x-twitter
   url: https://twitter.com/StackExchange
+- type: x-website
+  url: http://stackexchange.com
 - type: x-website
   url: https://stackexchange.com/
 include: []

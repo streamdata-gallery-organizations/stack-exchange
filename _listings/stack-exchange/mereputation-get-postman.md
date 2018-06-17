@@ -1579,21 +1579,3 @@
           "request": {
             "url": "http://api.stackexchange.com/2.2/me/reputation?callback=%7B%7D&filter=%7B%7D&site=%7B%7D",
             "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Returns the reputation changed for the user associated with the given access_token.\n \nThis method returns a list of reputation changes."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "0ce3c202-5a9c-4869-9a27-6ed47d386b78"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}

@@ -1580,40 +1580,4 @@
             "url": "http://api.stackexchange.com/2.2/me/reputation?callback=%7B%7D&filter=%7B%7D&site=%7B%7D",
             "method": "GET",
             "body": {
-              "mode": "raw"
-            },
-            "description": "Returns the reputation changed for the user associated with the given access_token.\n \nThis method returns a list of reputation changes."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "17327234-316e-4d8a-ab41-2dfa51041b50"
-            }
-          ]
-        },
-        {
-          "id": "cebde704-ce9f-4043-ba8e-8cd57c0494f5",
-          "name": "returns-users-public-reputation-history-this-method-returns-a-list-of-reputation-history",
-          "request": {
-            "url": "http://api.stackexchange.com/2.2/me/reputation-history?callback=%7B%7D&filter=%7B%7D&page=%7B%7D&pagesize=%7B%7D&site=%7B%7D",
-            "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Returns user's public reputation history.\n \nThis method returns a list of reputation_history."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "3454a182-1cd6-41dd-888b-ac984c1d809d"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+         
