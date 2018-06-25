@@ -3,14 +3,14 @@ name: Stack Exchange
 x-slug: stack-exchange
 description: After someone asks a question, members of the community propose answers.
   Others vote on those answers. Very quickly, the answers with the most votes rise
-  to the top. You don???t have to read through a lot of discussion to find the best
-  answer.    Like to...
+  to the top. You dont have to read through a lot of discussion to find the best answer.    Like
+  to...
 image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
 x-kinRank: "8"
 x-alexaRank: "126"
 tags: Stack Exchange
-created: "2018-06-20"
-modified: "2018-06-20"
+created: "2018-06-25"
+modified: "2018-06-25"
 url: https://raw.githubusercontent.com/streamdata-gallery-organizations/stack-exchange/master/_listings/stack-exchange/apis.md
 specificationVersion: "0.14"
 apis:
@@ -2161,7 +2161,7 @@ apis:
   x-api-slug: stack-exchange
   description: After someone asks a question, members of the community propose answers.
     Others vote on those answers. Very quickly, the answers with the most votes rise
-    to the top. You don???t have to read through a lot of discussion to find the best
+    to the top. You dont have to read through a lot of discussion to find the best
     answer.    Like to...
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/253-stack-exchange.jpg
   humanURL: http://stackexchange.com
@@ -2197,6 +2197,8 @@ x-common:
   url: https://github.com/StackExchange
 - type: x-javascript-sdk
   url: https://api.stackexchange.com/docs/js-lib
+- type: x-linkedin
+  url: https://www.linkedin.com/company/stack-exchange
 - type: x-privacy
   url: https://stackexchange.com/legal/privacy-policy
 - type: x-rate-limits
